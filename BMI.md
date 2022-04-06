@@ -10,9 +10,9 @@ For this program, we are reading data from csv almost 1000 record
 That record contain, age, height and weight with comma separated
 
 Sample data from that Medicalpremium.csv file
-45,155,57
-60,180,73
-36,158,59
+- 45,155,57
+- 60,180,73
+- 36,158,59
 
 Code to read from medical file - Medicalpremium.csv which is there in same folder where python code is running. 
 
@@ -120,4 +120,8 @@ for record in data: # travel through all record in a list object which has all r
  
  
 ### Support 
-Having trouble ? Check out [Git Code](https://github.com/pmuniyandi/code/blob/master/numerology.py) 
+Having trouble ? Check out 
+- [All function](https://github.com/pmuniyandi/code/blob/master/healthcalculator.py).
+- [Main program to read/write](https://github.com/pmuniyandi/code/blob/master/write_csv.py).
+- [Medicalpremium.csv](https://raw.githubusercontent.com/pmuniyandi/code/master/Medicalpremium.csv).
+
