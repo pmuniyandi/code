@@ -1,4 +1,4 @@
-## Destiny,  Day number calculation using Date of Birth
+## Destiny,  Day number calculation using Date of Birth [Video](https://youtu.be/a7lAki-vsHU)
 
 For calculating Day number, Destiny number from Date of brith. (ex: 03/03/1972 => 0+3+0+3+1+9+7+2 => 25 => 2+5 => 7)
 
