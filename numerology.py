@@ -5,35 +5,58 @@ Main program should
     b. Call your function
     c. Display given DOB and numerology number 
     d. Call until you want to stop process.
+
+    1 -> A, I, J, Q, Y
+    2 -> B, K, R
+    3 -> C, G, L, S
+    4 -> D, M, T
+    5 -> E, H, N, X
+    6 -> U, V, W
+    7 -> O, Z
+    8 -> F, P
 '''
-def addDigit(data):
+def nameNumber(name):
     sum = 0
-    for digit in data:
-        sum += int(digit)
-    
-    return sum
-
-def addDigitNumber(data):
-    sum = 0
-    
-    while (data != 0):
-        digit = data % 10  # extract last digit
-        data = data // 10 # remove last digit
-        sum += digit
+    namedic = {'a':1,'b':2,'c':3,'d':4,'e':5,'f':8,'g':3,'h':5,'i':1, 'j':1,'k':2,
+                'l':1,'m':4,'n':5,'o':7,'p':8,'q':1,'r':2,'s':3,'t':4,'u':6,'v':6,
+                'w':6,'x':5, 'y':1,'z':7}
+    for namechar in name:
+        namechar = namechar.lower()
+        sum += namedic[namechar]
 
     return sum
 
+def sumDigit(number):
+    number = abs(number)
+    sum = 0 # to store sum of digits
+    while(number > 0 or sum > 9): # number > 0 or sum > 9
+        if(number == 0): 
+            number = sum
+            sum = 0
+        sum += number % 10
+        number = number // 10
+    return sum
 
-dob = input("Enter DOB (dd/mm/yyyy)") #enter dob
-print(dob)
-dob_list = dob.split("/")
-print(dob_list)
-print(int(dob_list[0]))
 
-day_number = addDigitNumber(int(dob_list[0]))
-month_number = addDigitNumber(int(dob_list[1]))
-year_number = addDigitNumber(int(dob_list[2]))
+dob = input("DOB (dd/mm/yyyy) ")
+name = input("Name ")
+dob_array = dob.split("/")
 
-print(day_number)
-print(month_number)
-print(year_number)
+'''dd = int(dob_array[0])
+mm = int(dob_array[1])
+yyyy = int(dob_array[2])
+
+dd_number = sumDigit(dd)
+mm_number = sumDigit(mm)
+yyyy_number = sumDigit(yyyy)
+
+all_digit  = dd_number + mm_number + yyyy_number
+'''
+de_num = sumDigit(int(dob_array[0])+int(dob_array[1])+int(dob_array[2]))
+day_num = sumDigit(int(dob_array[0]))
+
+print("Destiny number ", de_num)
+print("Day number ", day_num)
+print("Name ", sumDigit(nameNumber(name)))
+file = str(de_num) + ".txt"
+print("File ", file)
