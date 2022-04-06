@@ -1,4 +1,4 @@
-## Destiny, Day number calculation using Date of Birth
+## Destiny,  Day number calculation using Date of Birth
 
 For calculating Day number, Destiny number from Date of brith. (ex: 03/03/1972 => 0+3+0+3+1+9+7+2 => 25 => 2+5 => 7)
 
@@ -7,7 +7,8 @@ Step 1: Split DD, MM, & YYYY from Date of Birth.
 If you are getting your DOB from user, it will always come as string. Split as list from given string using split string function using "/" as separator.
 
  ```
- dob_array = dob.split("/")
+ dob = input("DOB (dd/mm/yyyy) ") # getting DOB as string
+ dob_array = dob.split("/") # spliting as three element list as date, month and year
  ```
  
  Write a user defined function to calculate single digit from given number
