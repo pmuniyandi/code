@@ -42,7 +42,7 @@ dob = input("DOB (dd/mm/yyyy) ")
 name = input("Name ")
 dob_array = dob.split("/")
 
-'''dd = int(dob_array[0])
+dd = int(dob_array[0])
 mm = int(dob_array[1])
 yyyy = int(dob_array[2])
 
@@ -51,12 +51,10 @@ mm_number = sumDigit(mm)
 yyyy_number = sumDigit(yyyy)
 
 all_digit  = dd_number + mm_number + yyyy_number
-'''
-de_num = sumDigit(int(dob_array[0])+int(dob_array[1])+int(dob_array[2]))
-day_num = sumDigit(int(dob_array[0]))
 
-print("Destiny number ", de_num)
+destiny_num = sumDigit(all_digit)
+day_num = sumDigit(dd_number)
+
+print("Destiny number ", destiny_num)
 print("Day number ", day_num)
 print("Name ", sumDigit(nameNumber(name)))
-file = str(de_num) + ".txt"
-print("File ", file)
