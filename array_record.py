@@ -4,7 +4,7 @@
 #from student import *
 #students = []  # mutiple records list object
 #student = {}  # single entity dic
-#from student import *
+#from student import **
 # 
 '''for loop in range(2): # execute this loop for 2 time
     # reading student information dic Key/Value pair
