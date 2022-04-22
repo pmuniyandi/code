@@ -1,21 +1,22 @@
 from csv import writer
 
-out = writer(open("cow.csv", "w"))         #creating output file
+out = writer(open("cow.csv", "a"))         #creating output file w mode always creat a new file
 record = [] #empty record for single record
 records = [] #empty record for multiple record
 
 #Reading Cow detail start
 flag = 'y'
 while flag == 'y' or flag == 'Y':
-    cow_id = input('cow id? ')
-    breed = input('breed? ')
-    dob = input('dob (dd/mm/yy)? ')
-    weight = input('weight? ')
-    color = input('color? ')
-    milking = input('milking (y/n)? ')
-    healthstatus = input('health status? ')
-    gestationperiod = input('gestationperiod (y/n)? ')
-    vaccinationschedule = input('vaccination schedule (dd/mm/yy) ')
+    cow_id = input('Cow id? ')
+    breed = input('Breed? ')
+    dob = input('Bob (dd/mm/yy)? ')
+    weight = input('Weight? ')
+    color = input('Color? ')
+    
+    healthstatus = input('Health status? ')
+    gestationperiod = input('Gestationperiod (y/n)? ')
+    milking = input('Milking (y/n)? ')
+    vaccinationschedule = input('Vaccination schedule (dd/mm/yy) ')
     #Reading Cow detail end
 
     #adding Cow detail into record start
@@ -32,6 +33,7 @@ while flag == 'y' or flag == 'Y':
     records.append(record) # adding to recored
     #adding Cow detail into record end
     flag = input('continue (y/n)? ')
+    record = [] # empty record object
 
-
-out.writerow(records) # writing to output file
+for record in records: # write one by one using for loop
+    out.writerow(record) # writing to output file
