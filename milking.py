@@ -30,7 +30,7 @@ while flag == 'y' or flag == 'Y':
     
     records.append(record) # adding to recored
     #adding Cow detail into record end
-    flag = input('continue (y/n)? ')
+    flag = input('Continue (y/n)? ')
     record = []
 
 for record in records:

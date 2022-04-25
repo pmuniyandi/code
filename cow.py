@@ -6,15 +6,20 @@ records = [] #empty record for multiple record
 
 #Reading Cow detail start
 flag = 'y'
-while flag == 'y' or flag == 'Y':
+gen = "female"
+g = "f"
+while flag.lower() == 'y'.lower():
     cow_id = input('Cow id? ')
     breed = input('Breed? ')
     dob = input('Bob (dd/mm/yy)? ')
     weight = input('Weight? ')
     color = input('Color? ')
-    
     healthstatus = input('Health status? ')
-    gestationperiod = input('Gestationperiod (y/n)? ')
+    gender = input('Gender (Male/Female)? ')
+    if (gender.upper() == gen.upper() or gender.upper() == g.upper()):
+        milking = input('milking (y/n)? ')
+        gestationperiod = input('Gestationperiod (y/n)? ')
+
     milking = input('Milking (y/n)? ')
     vaccinationschedule = input('Vaccination schedule (dd/mm/yy) ')
     #Reading Cow detail end
@@ -25,8 +30,10 @@ while flag == 'y' or flag == 'Y':
     record.append(dob) 
     record.append(weight) 
     record.append(color) 
-    record.append(milking) 
-    record.append(healthstatus) 
+    record.append(gender) 
+    if ((gender.upper() == gen.upper()) or (gender.upper() == 'f'.upper())):
+        record.append(milking) 
+        record.append(healthstatus) 
     record.append(gestationperiod) 
     record.append(vaccinationschedule) 
     
