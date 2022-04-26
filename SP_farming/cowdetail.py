@@ -1,9 +1,7 @@
-from csv import writer
+from dbconnection import *
 
-out = writer(open("cow.csv", "a"))         #creating output file w mode always creat a new file
-record = [] #empty record for single record
-records = [] #empty record for multiple record
-
+records = [] # list object -> [ {"cow_id":001,}, {}, {}]
+record = {} # dic object for JSON format
 #Reading Cow detail start
 flag = 'y'
 
@@ -24,22 +22,22 @@ while flag.lower() == 'y'.lower():
     #Reading Cow detail end
 
     #adding Cow detail into record start
-    record.append(cow_id) 
-    record.append(breed) 
-    record.append(dob) 
-    record.append(weight) 
-    record.append(color) 
-    record.append(gender) 
+    record["cow_id"] = cow_id
+    record["breed"] = breed
+    record["dob"] = dob
+    record["weight"] = weight
+    record["color"] = color
+    record["gender"] = gender
     if ((gender.upper() == "female".upper()) or (gender.upper() == 'f'.upper())):
-        record.append(milking) 
-        record.append(gestationperiod) 
-    record.append(healthstatus) 
-    record.append(vaccinationschedule) 
+        record["milking"] = milking
+        record["gestationperiod"] = gestationperiod
+    record["healthstatus"] = healthstatus
+    record["vaccinationschedule"] = vaccinationschedule
     
     records.append(record) # adding to recored
     #adding Cow detail into record end
     flag = input('Continue (y/n)? ')
-    record = [] # empty record object
+    record = {} # empty record object
 
 for record in records: # write one by one using for loop
-    out.writerow(record) # writing to output file
+    spcow.insert_one(record)
