@@ -17,6 +17,3 @@ spexpense = spdb["expensedetail"]
 spmilking = spdb["milkingdetail"]
 #document or table for doctor visit
 spdoctorvisit = spdb["doctorvisitdetail"]
-
-
-
