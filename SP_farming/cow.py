@@ -11,7 +11,7 @@ while flag.lower() == 'y'.lower():
     cow_id = input('Cow id? ')
     breed = input('Breed? ')
     dob = input('Bob (dd/mm/yy)? ')
-    weight = input('Weight? ')
+    weight = input('Weight? ') # test pmuniyandi git
     color = input('Color? ')
     healthstatus = input('Health status? ')
     gender = input('Gender (Male/Female)? ')
